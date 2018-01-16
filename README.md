@@ -36,9 +36,9 @@ D - delete
     | data = sql.table("Books").update("name", "age", "sex").to("abbas", "20", "male").where("username", "abase96").get(); | 
 
 #### 6. for the delete operation
-    - chain the delete() method to table(),  the insert() method acccepts unlimited string arguments representing the columnName
-    - now chain the where() method to the insert() method in question, the where() method acccepts unlimited string arguments representing the SQL WHERE condition
-    - finally chain the get() method at the end
+- chain the delete() method to table(),  the insert() method acccepts unlimited string arguments representing the columnName
+- now chain the where() method to the insert() method in question, the where() method acccepts unlimited string arguments representing the SQL WHERE condition
+- finally chain the get() method at the end
    ----------------------------------------------------
     ### Example :
     | data = sql.table("users").delete().where("abbas", "male").get(); |    
