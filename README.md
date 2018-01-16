@@ -40,7 +40,7 @@ D - delete
 - now chain the where() method to the insert() method in question, the where() method acccepts unlimited string arguments representing the SQL WHERE condition
 - finally chain the get() method at the end
    ----------------------------------------------------
-    ### Example :
+    * Example :
     | data = sql.table("users").delete().where("abbas", "male").get(); |    
 
 #### Constraits
