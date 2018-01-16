@@ -6,8 +6,8 @@ U - Update
 D - delete
 
 #### Download the jar file and import it into your project
-	* [AbeazSqlGenerator.jar](https://github.com/abbasogaji/abaezjava-sql-generator/releases/download/v1.0/abaezSqlGenerator.jar) - Version 1.0 
-#### and import abeaz.sql.generator.*; to your java file;
+* [AbaezSqlGenerator.jar](https://github.com/abbasogaji/abaezjava-sql-generator/releases/download/v1.0/abaezSqlGenerator.jar) - Version 1.0 
+  - <strong>import</strong> abaez.sql.generator.*; to your java file;
 
 -----------------------------------------------
 -----------------------------------------------
