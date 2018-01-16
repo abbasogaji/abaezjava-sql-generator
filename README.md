@@ -5,8 +5,14 @@ R - read
 U - Update
 D - delete
 
-### How to use the SQL generator
+#### Download the jar file and import it into your project
+	* [AbeazSqlGenerator.jar](https://github.com/abbasogaji/abaezjava-sql-generator/releases/download/v1.0/abaezSqlGenerator.jar) - Version 1.0 
+#### and import abeaz.sql.generator.*; to your java file;
 
+-----------------------------------------------
+-----------------------------------------------
+
+### How to use the SQL generator
 1. Firstly, create an object of the SqlGenerator() class
 2. Secondly, Call the table() method with argument representing the Database Table Name
 #### 3. for a select operation;
