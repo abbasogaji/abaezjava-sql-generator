@@ -1,4 +1,4 @@
-# ABEAZ-CRUD JAVA SQL GENERATOR API
+# ABEAZ-CRUD JAVA SQL GENERATOR
 This is a custom built sql generator which returns string value in-form of SQL commands for basic CRUD fuctions
 C - Create
 R - read
