@@ -5,21 +5,13 @@ R - read
 U - Update
 D - delete
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f46f21ae8cb54e33662f50c477cfb3d6f221eaa0
 #### Download the jar file and import it into your project
 * [AbaezSqlGenerator.jar](https://github.com/abbasogaji/abaezjava-sql-generator/releases/download/v1.0/abaezSqlGenerator.jar) - Version 1.0 
   - <strong>import</strong> abaezcorp.sql.generator.*; to your java file;
 
 -----------------------------------------------
 -----------------------------------------------
-<<<<<<< HEAD
 
-### How to use the SQL generator
-=======
->>>>>>> f46f21ae8cb54e33662f50c477cfb3d6f221eaa0
 
 ### How to use the SQL generator
 1. Firstly, create an object of the SqlGenerator() class
@@ -61,11 +53,5 @@ D - delete
         data = sql.table("users").delete().where("abbas", "=", "male").get();     
 
 #### Constraits
-<<<<<<< HEAD
     * No JOIN CLAUSES YET
  
-=======
-    * No mutlipe WHERE conditions
-    * No JOIN CLAUSES
-    * No ORDER BY CLAUSES
->>>>>>> f46f21ae8cb54e33662f50c477cfb3d6f221eaa0
