@@ -1,4 +1,4 @@
-# ABEAZ-CRUD JAVA SQL GENERATOR API
+# ABEAZ-CRUD JAVA SQL GENERATOR
 This is a custom built sql generator which returns string value in-form of SQL commands for basic CRUD fuctions
 C - Create
 R - read
@@ -24,8 +24,10 @@ D - delete
  - finally chain the get() method at the end
  ----------------------------------------------------
     * Example :
-    | data = sql.table("users").select().where("username", "abcd").get(); |
-	| data = sql.table("users").select("first_name", "last_name").where("username", "abcd").get(); |
+     data = sql.table("users").select().where("username", "=", "abcd").get(); 
+     data = sql.table("users").select().where("username", "=", "abcd").andWhere("age", "<=", "20").get(); 
+     data = sql.table("users").select().where("username", "=", "abcd").orderBy("id", "ASC").get(); 
+	 data = sql.table("users").select("first_name", "last_name").where("username", "=", "abcd").get(); 
  
 #### 4. for a insert operation;
  - chain the insert() method to table(),  the insert() method acccepts unlimited string arguments representing the column Name
@@ -33,7 +35,7 @@ D - delete
  - finally chain the get() method at the end
 ----------------------------------------------------
     * Example :
-    | data = sql.table("users").insert("name", "age").values("abbas", "20", "male").get(); |
+        data = sql.table("users").insert("name", "age").values("abbas", "20", "male").get(); 
 
 #### 5. for the update opertaion
  - chain the update() method to table(),  the update() method acccepts unlimited string arguments representing the column Name
@@ -41,7 +43,7 @@ D - delete
  - finally chain the get() method at the end
   ----------------------------------------------------
     * Example :
-    | data = sql.table("Books").update("name", "age", "sex").to("abbas", "20", "male").where("username", "abase96").get(); | 
+        data = sql.table("Books").update("name", "age", "sex").to("abbas", "20", "male").where("username", "=", "abase96").orWhere("username", "=", "abase11").get();  
 
 #### 6. for the delete operation
 - chain the delete() method to table(),  the insert() method acccepts unlimited string arguments representing the columnName
@@ -49,9 +51,8 @@ D - delete
 - finally chain the get() method at the end
    ----------------------------------------------------
     * Example :
-    | data = sql.table("users").delete().where("abbas", "male").get(); |    
+        data = sql.table("users").delete().where("abbas", "=", "male").get();     
 
 #### Constraits
-    * No mutlipe WHERE conditions
-    * No JOIN CLAUSES
-    * No ORDER BY CLAUSES
+    * No JOIN CLAUSES YET
+ 
