@@ -10,7 +10,7 @@ public class MainTest {
 			//data = sql.table("users").insert("name", "age").values("abbas", "20", "male").get();
 			//data = sql.table("users").select().where("username", "abcd").get();
 			//data = sql.table("users").select("first_name", "last_name").where("username", "abcd").get();
-			data = sql.table("users").delete().where("abbas", "male").get();
+			data = sql.table("users").delete().where("abbas", "=", "male").orWhere("abbas", "=", "male").get();
 			System.out.println(data);
 
 

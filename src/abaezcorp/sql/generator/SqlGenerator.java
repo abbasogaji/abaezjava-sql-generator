@@ -15,10 +15,13 @@ package abaezcorp.sql.generator;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SqlGenerator {
 
 	private String table, sql;
+	private final String[] operators = {"=", "!=", ">", "<", ">=", "<="};
+	private final String[] orderType = {"ASC", "DESC"};
 	private List<String> updateColumns, updateValues;
 	private List<String> insertColumns, insertValues;
 
@@ -100,9 +103,67 @@ public class SqlGenerator {
 		return this;
 	}
 	//THE BELOW IS CALLED AFTER CALLING THE UPDATE(), SELECT(), INSERT() OR DELETE() METHOD
-	public SqlGenerator where(String var, String val){
-		sql += " WHERE "+var+" = '"+val+"'";
+	public SqlGenerator whereEqual(String columnName, String val){
+		sql += " WHERE "+columnName+" = '"+val+"'";
 		return this;
+	}
+	//THE BELOW CAN BE CALLED AFTER WHERE() METHOD
+	public SqlGenerator orWhereEqual(String columnName, String val){
+		sql += " OR "+columnName+" = '"+val+"'";
+		return this;
+	}
+	//THE BELOW IS CALLED AFTER WHERE() METHOD
+	public SqlGenerator andWhereEqual(String columnName, String val){
+		sql += " AND "+columnName+" = '"+val+"'";
+		return this;
+	}
+	//THE BELOW IS CALLED FOR ADVANCED WHERE() CLAUSE
+	public SqlGenerator where(String columnName, String operator, String val){
+		if(Arrays.asList(operators).contains(operator)){
+			sql += " WHERE "+columnName+" "+operator+" '"+val+"'";
+			return this;
+		}else{
+			System.err.println(new WrongWhereClauseOperatorException("A Wrong WHERE clause operator Exception Occured"));
+			System.exit(0);
+			return null;
+
+		}
+	}//THE BELOW CAN BE CALLED AFTER WHERE() METHOD
+	public SqlGenerator orWhere(String columnName, String operator, String val){
+		if(Arrays.asList(operators).contains(operator)){
+			sql += " OR "+columnName+" "+operator+" '"+val+"'";
+			return this;
+		}else{
+			System.err.println(new WrongWhereClauseOperatorException("A Wrong Column to value ratio Exception Occured"));
+			System.exit(0);
+			return null;
+
+		}
+
+	}
+	//THE BELOW IS CALLED AFTER WHERE() METHOD
+	public SqlGenerator andWhere(String columnName, String operator, String val){
+		if(Arrays.asList(operators).contains(operator)){
+			sql += " AND "+columnName+" "+operator+" '"+val+"'";
+			return this;
+		}else{
+			System.err.println(new WrongWhereClauseOperatorException("A Wrong Column to value ratio Exception Occured"));
+			System.exit(0);
+			return null;
+
+		}
+	}
+	//THE BELOW IS CALLED AFTER WHERE() METHOD
+	public SqlGenerator orderBy(String columnName, String keyword){
+		if(Arrays.asList(orderType).contains(keyword)){
+			sql += " ORDER BY "+columnName+" "+keyword+"";
+			return this;
+		}else{
+			System.err.println(new WrongOrderTypeException("A Wrong Order - Type Exception Occured"));
+			System.exit(0);
+			return null;
+
+		}
 	}
 	//THE BELOW IS CALLED AFTER CALLING THE TABLE() METHOD
 	public SqlGenerator delete(){

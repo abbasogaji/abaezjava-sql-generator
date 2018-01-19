@@ -1,3 +1,5 @@
 .classpath
 .project
 .settings/
+bin/
+src/abaezcorp/sql/generator/MainTest.java
